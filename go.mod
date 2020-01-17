@@ -1,4 +1,4 @@
-module github.com/OpenPeeDeeP/xdg
+module github.com/j4ns8i/xdg
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

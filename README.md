@@ -1,20 +1,24 @@
-# XDG [![Build status](https://ci.appveyor.com/api/projects/status/9eoupq9jgsu2p0jv?svg=true)](https://ci.appveyor.com/project/dixonwille/xdg) [![Build Status](https://travis-ci.org/OpenPeeDeeP/xdg.svg?branch=master)](https://travis-ci.org/OpenPeeDeeP/xdg) [![Go Report Card](https://goreportcard.com/badge/github.com/OpenPeeDeeP/xdg)](https://goreportcard.com/report/github.com/OpenPeeDeeP/xdg) [![GoDoc](https://godoc.org/github.com/OpenPeeDeeP/xdg?status.svg)](https://godoc.org/github.com/OpenPeeDeeP/xdg) [![codecov](https://codecov.io/gh/OpenPeeDeeP/xdg/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenPeeDeeP/xdg)
+# XDG [![Go Report Card](https://goreportcard.com/badge/github.com/j4ns8i/xdg)](https://goreportcard.com/report/github.com/j4ns8i/xdg) [![GoDoc](https://godoc.org/github.com/j4ns8i/xdg?status.svg)](https://godoc.org/github.com/j4ns8i/xdg)
 
-A cross platform package that tries to follow [XDG Standard](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) when possible. Since XDG is linux specific, I am only able to follow standards to the T on linux. But for the other operating systems I am finding similar best practice locations for the files.
+A cross platform package that tries to follow [XDG
+Standard](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+when possible. This repo is a fork of https://github.com/OpenPeeDeeP/xdg, which
+chooses established MacOS directories over the defaults XDG mentioned in the
+specification.
 
 ## Locations Per OS
 
-The following table shows what is used if the envrionment variable is not set. If the variable is set then this package uses that. Linux follows the default standards. Mac does when it comes to the home directory but for system wide it uses the standard `/Library/Application Support`. As for Windows, the variable defaults are just other environment variables set up by the operation system.
+The following table shows what is used if the envrionment variable is not set. If the variable is set then this package uses that. Unix derivatives follow the default standards. As for Windows, the variable defaults are just other environment variables set up by the operation system.
 
 > When creating `XDG` application the `Vendor` and `Application` names are appeneded to the end of the path to keep projects unique.
 
-|  | Linux(and BSD) | Mac | Windows |
-| ---: | :---: | :---: | :---: |
-| `XDG_DATA_DIRS` | [`/usr/local/share`, `/usr/share`] | [`/Library/Application Support`] | `%PROGRAMDATA%` |
-| `XDG_DATA_HOME` | `~/.local/share` | `~/Library/Application Support` | `%APPDATA%` |
-| `XDG_CONFIG_DIRS` | [`/etc/xdg`] | [`/Library/Application Support`] | `%PROGRAMDATA%` |
-| `XDG_CONFIG_HOME` | `~/.config` | `~/Library/Application Support` | `%APPDATA%` |
-| `XDG_CACHE_HOME` | `~/.cache` | `~/Library/Caches` | `%LOCALAPPDATA%` |
+|                   | Unix and Linux                     | Windows          |
+| ---:              | :---:                              | :---:            |
+| `XDG_DATA_DIRS`   | [`/usr/local/share`, `/usr/share`] | `%PROGRAMDATA%`  |
+| `XDG_DATA_HOME`   | `~/.local/share`                   | `%APPDATA%`      |
+| `XDG_CONFIG_DIRS` | [`/etc/xdg`]                       | `%PROGRAMDATA%`  |
+| `XDG_CONFIG_HOME` | `~/.config`                        | `%APPDATA%`      |
+| `XDG_CACHE_HOME`  | `~/.cache`                         | `%LOCALAPPDATA%` |
 
 ## Notes
 
