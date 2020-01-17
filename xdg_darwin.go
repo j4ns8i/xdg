@@ -10,21 +10,21 @@ import (
 )
 
 func (o *osDefaulter) defaultDataHome() string {
-	return filepath.Join(os.Getenv("HOME"), "Library", "Application Support")
+	return filepath.Join(os.Getenv("HOME"), ".local", "share")
 }
 
 func (o *osDefaulter) defaultDataDirs() []string {
-	return []string{filepath.Join("/Library", "Application Support")}
+	return []string{"/usr/local/share/", "/usr/share/"}
 }
 
 func (o *osDefaulter) defaultConfigHome() string {
-	return filepath.Join(os.Getenv("HOME"), "Library", "Application Support")
+	return filepath.Join(os.Getenv("HOME"), ".config")
 }
 
 func (o *osDefaulter) defaultConfigDirs() []string {
-	return []string{filepath.Join("/Library", "Application Support")}
+	return []string{"/etc/xdg"}
 }
 
 func (o *osDefaulter) defaultCacheHome() string {
-	return filepath.Join(os.Getenv("HOME"), "Library", "Caches")
+	return filepath.Join(os.Getenv("HOME"), ".cache")
 }
